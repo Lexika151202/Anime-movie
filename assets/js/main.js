@@ -3,69 +3,21 @@
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
 
-
-// // Lấy tham chiếu đến phần tử menu và nút hiển thị menu
-// const navMenu = document.getElementById('nav-menu');
-// const navShow = document.getElementById('nav-toggle');
-
-// // Hàm để hiển thị menu
-// function showMenu() {
-//   navMenu.classList.add('show-menu'); // Hiển thị menu bằng cách loại bỏ lớp 'hide'
-// }
-
-// // Hàm để ẩn menu
-// function hideMenu() {
-//   navMenu.classList.remove('show-menu'); // Ẩn menu bằng cách thêm lớp 'hide'
-// }
-
-// // Lắng nghe sự kiện khi người dùng nhấp chuột bên ngoài menu
-// document.addEventListener('click', function (event) {
-//   const targetElement = event.target; // Phần tử mà người dùng nhấp chuột
-
-//   // Kiểm tra nếu người dùng nhấp chuột bên ngoài menu và nút hiển thị menu
-//   if (targetElement !== navMenu && targetElement !== navShow) {
-//     hideMenu(); // Ẩn menu khi nhấp chuột bên ngoài
-//   }
-// });
-
-
-
-
-// const navMenu = document.getElementById('nav-menu'),
-//   navToggle = document.getElementById('nav-toggle'),
-//   navClose = document.getElementById('nav-close');
-
-// if (navToggle) {
-//   navToggle.addEventListener('click', () => {
-//     navMenu.classList.add("show-menu");
-//   })
-// }
-
-// if (navClose) {
-//   navToggle.addEventListener('click', () => {
-//     navMenu.classList.remove("show-menu");
-//   })
-// }
-
-
-// <!-- Thêm mã JavaScript sau vào cuối phần <body> của trang HTML của bạn -->
-
 document.addEventListener('DOMContentLoaded', function () {
   const navToggle = document.getElementById('nav-toggle');
   const navClose = document.getElementById('nav-close');
   const navMenu = document.getElementById('nav-menu');
 
-  // Thêm sự kiện click vào navToggle để hiển thị navMenu
+  // Add click event to navToggle to show navMenu
   navToggle.addEventListener('click', function () {
     navMenu.classList.add('show-menu');
   });
 
-  // Thêm sự kiện click vào navClose để ẩn navMenu
+  // Add click event to navToggle to hide navMenu
   navClose.addEventListener('click', function () {
     navMenu.classList.remove('show-menu');
   });
 
-  // Thêm sự kiện click ra ngoài để ẩn navMenu
   window.addEventListener('click', function (event) {
     if (!navMenu.contains(event.target) && event.target !== navToggle) {
       navMenu.classList.remove('show-menu');
